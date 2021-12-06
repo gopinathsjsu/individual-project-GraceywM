@@ -1,2 +1,4 @@
-Toal Price : 0.0Please correct quantities : 
+
+Please correct quantities : 
 Oil
+incorrect quantity is 3

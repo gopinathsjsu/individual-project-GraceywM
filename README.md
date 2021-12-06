@@ -2,12 +2,6 @@ Inventory-Management-System
 ===========================
 
 
-Content
-=======
-1. [Installation/Quick Guide](#quick-guide)
-1. [How to use/Usage](#usage)
-
-
 Installation
 ============
 
@@ -40,18 +34,24 @@ Design Patterns Used
 1. In class CardServiceImpl we have followed Adapter Design Pattern.
 1. In all the model classes, we have followed Value Object Design Pattern.
 
-
-Information about Files
-----------------------------
-- items.csv : item database
-- cards.csv : cards database
-- config.txt : add configuration for maximum allowed items per category.
-- input.csv : add input details in the given format Items,Quantity,CardNumber
-- output.txt : output file
-- class diagram : [image](./ims-class-diagram.png)
+- class diagram :
+  ![alt text](Class_Diagram.png "Title")
 
 
+Results
+==========
 
+1.Input1-Sheets1.csv:
+output is 36.68
+![alt text](./output_screenshots/input1.png "Title")
+
+2.Input2-Sheets2.csv:
+exceed quantity
+![alt text](./output_screenshots/input2.png "Title")
+
+3.Input3-Sheets3.csv
+output is 1115.94
+![alt text](./output_screenshots/input3.png "Title")
 
 
 

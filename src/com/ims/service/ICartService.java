@@ -1,11 +1,12 @@
 package com.ims.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.ims.model.InputItemVO;
 
 public interface ICartService {
-	void processOrder();
+	void processOrder() throws IOException;
 
 	List<String> validateInputItemQuantity();
 

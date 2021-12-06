@@ -1,10 +1,15 @@
 package com.ims.service;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 
 import com.ims.dao.ItemsDao;
 import com.ims.model.CardsVO;
@@ -20,8 +25,9 @@ public class CardServiceImpl implements ICartService {
 	private static Map<String, Integer> thresholdMap = new HashMap<>();
 	private static Map<String, Integer> inputCategoryMap = new HashMap<>();
 	private static Map<String, Double> paymentMap = new HashMap<>();
+	private List<Integer> ans=new ArrayList<>();
 
-	public void processOrder() {
+	public void processOrder() throws IOException {
 
 		loadMasterData();
 
@@ -29,7 +35,7 @@ public class CardServiceImpl implements ICartService {
 
 		List<String> itemsWithIncorrectQty = validateInputItemQuantity();
 		if (!itemsWithIncorrectQty.isEmpty() && finalOutput) {
-			WriteIntoFile.writeIntoFile(itemsWithIncorrectQty,true);
+			WriteIntoFile.writeIntoFile(itemsWithIncorrectQty,false);
 			finalOutput = false;
 		}
 
@@ -59,6 +65,7 @@ public class CardServiceImpl implements ICartService {
 		for (InputItemVO inputItem : inputItemsList) {
 			if (inputItem.getQuantity() > itemsDao.getQuantityOfItem(inputItem.getItem())) {
 				incorrectItemsList.add(inputItem.getItem());
+				ans.add(inputItem.getQuantity());
 			}
 		}
 		return incorrectItemsList;
