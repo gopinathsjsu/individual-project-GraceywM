@@ -30,9 +30,10 @@ javaw.exe -classpath ./bin com.ims.main.IMSMain
 Design Patterns Used
 ============
 1. We have followed SOLID Design Principle in creating the project.
-1. In class ItemsDao, we have followed Cache Design Pattern and DAO Design Pattern.
-1. In class CardServiceImpl we have followed Adapter Design Pattern.
-1. In all the model classes, we have followed Value Object Design Pattern.
+1. We have followed chain of responsibility pattern. Each class has their own functions, they passed the obj to another class
+1. We followed Factory pattern.  Factory pattern is one of the most used design patterns in Java. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface. We used IcartService interface here, so it won't be exposed to the outside.
+
 
 - class diagram :
   ![alt text](Class_Diagram.png "Title")
@@ -51,7 +52,7 @@ exceed quantity
 
 3.Input3-Sheets3.csv
 output is 1115.94
-![alt text](./output_screenshots/input3.png "Title")
+![alt text](output_screenshots/input2.png "Title")
 
 
 

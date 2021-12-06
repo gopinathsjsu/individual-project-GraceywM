@@ -63,7 +63,7 @@ public class ReadFile {
 	
 	public static List<InputItemVO> convertToInputItems(){
 		List<InputItemVO> itemsList = new ArrayList<>();
-		String fileData = readFile("Input2 - Sheet1.csv");
+		String fileData = readFile("Input3 - Sheet1.csv");
 		String[] items = fileData.split(" ");
 
 		for (int i = 1; i < items.length; i++) {
